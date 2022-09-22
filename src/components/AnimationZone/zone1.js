@@ -1,8 +1,8 @@
 import React, {useEffect} from 'react'; 
 import styled, { keyframes } from 'styled-components'; 
 import RenderZoneCube from '../renderCube/renderZoneCube.js'; 
+import RenderZonePyramid from '../pyramid/renderZonePyramid.js'; 
 
-//
 const RenderZone = props => {
     const { inView } = props; 
 
@@ -12,6 +12,7 @@ const RenderZone = props => {
 
     return (
         <Scene>
+
             <RenderZoneCube
                 animationType={inView ? Cube1Animation : Cube1AnimationReverse}
                 TranslateX={Cube1XCoor}
@@ -60,6 +61,15 @@ const RenderZone = props => {
                 RotateY={Cube5YRotate}
                 RotateZ={Cube5ZRotate}
             /> 
+            <RenderZonePyramid
+                animationType={inView ? Pyramid1Animation : Pyramid1AnimationReverse}
+                TranslateX={Pyramid1XCoor}
+                TranslateY={Pyramid1YCoor}
+                TranslateZ={Pyramid1ZCoor}
+                RotateX={Pyramid1XRotate}
+                RotateY={Pyramid1YRotate}
+                RotateZ={Pyramid1ZRotate}
+            />
         </Scene> 
 
         )
@@ -423,6 +433,62 @@ const Cube5AnimationReverse = keyframes`
             rotateX(-720deg) 
             rotateZ(${Cube5ZRotate})
             scale3d(0, 0, 0);
+}
+`
+
+
+
+const Pyramid1XCoor = '-200px';
+const Pyramid1YCoor = '300px';
+const Pyramid1ZCoor = '100px';
+const Pyramid1YRotate = '0deg';
+const Pyramid1ZRotate = '-45deg';
+const Pyramid1XRotate = '0deg';
+const Pyramid1Scale = '0.5, 0.5, 0.5';
+const Pyramid1Animation = keyframes`
+
+    0%{
+        transform:
+            translateX(${Pyramid1XCoor})
+            translateY(${Pyramid1YCoor})
+            translateZ(${Pyramid1ZCoor})
+            rotateY(0deg) 
+            rotateX(${Pyramid1XRotate}) 
+            rotateZ(${Pyramid1ZRotate})
+            scale3d(0 , 0, 0);
+}
+    100%{
+        transform: 
+            translateX(${Pyramid1XCoor})
+            translateY(${Pyramid1YCoor})
+            translateZ(${Pyramid1ZCoor})
+            rotateY(1800deg) 
+            rotateX(${Pyramid1XRotate}) 
+            rotateZ(${Pyramid1ZRotate})
+            scale3d(${Pyramid1Scale});
+}
+`
+
+const Pyramid1AnimationReverse = keyframes`
+    0%{
+        transform:
+            translateX(${Pyramid1XCoor})
+            translateY(${Pyramid1YCoor})
+            translateZ(${Pyramid1ZCoor})
+            rotateY(0deg) 
+            rotateX(${Pyramid1XRotate}) 
+            rotateZ(${Pyramid1ZRotate})
+            scale3d(${Pyramid1Scale});
+}
+    100%{
+        transform: 
+            translateX(${Pyramid1XCoor})
+            translateY(${Pyramid1YCoor})
+            translateZ(${Pyramid1ZCoor})
+            rotateY(-1800deg) 
+            rotateX(${Pyramid1XRotate}) 
+            rotateZ(${Pyramid1ZRotate})
+            scale3d(0,0,0);
 }
 `
 
