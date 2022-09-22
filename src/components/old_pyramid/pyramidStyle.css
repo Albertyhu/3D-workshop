@@ -1,0 +1,41 @@
+.PyramidFace-front {
+    width: 0px; 
+    height: 0px;
+    background-color: #f8722f;
+    border-left: 80px solid rgba(0,0,0,0);
+    border-right: 80px solid rgba(0,0,0,0);
+    border-bottom: 80px solid #f8722f;
+    border-top: none;
+    transform: rotateX(122deg) translateZ(50px);
+}
+
+.PyramidFace-back {
+    background-color: #e47b46;
+    border-left: 80px solid transparent;
+    border-right: 80px solid transparent;
+    border-top: 80px solid #e47b46;
+    transform: rotateX(-122deg) translateZ(50px);
+}
+
+.PyramidFace-left {
+    background-color: #d88d68;
+    border-top: 80px solid transparent;
+    border-bottom: 80px solid transparent;
+    border-right: 80px solid #d88d68;
+    transform: rotateY(-122deg) translateZ(50px);
+}
+
+.PyramidFace-right {
+    background-color: #f09f78;
+    border-top: 80px solid transparent;
+    border-bottom: 80px solid transparent;
+    border-left: 80px solid #d88d68;
+    transform: rotateY(122deg) translateZ(50px);
+}
+
+.PyramidFace-bottom {
+    background-color: #e16527;
+    width: 100px;
+    height: 100px;
+    transform: rotateY(0deg) translateZ(50px);
+}

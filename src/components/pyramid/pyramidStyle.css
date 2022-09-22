@@ -1,0 +1,21 @@
+.PyramidFace-back {
+    transform-origin: 100px 0;
+    transform: rotateY(0) rotateX(-30deg);
+    border-bottom-color: #fc5632 !important;
+}
+
+.PyramidFace-front {
+    transform: rotateX(30deg);
+    transform-origin: 0 0;
+    border-bottom-color: #ee5c3c !important;
+}
+.PyramidFace-left {
+    transform-origin: 100px 0;
+    transform: rotateY(90deg) rotateX(-30deg);
+    border-bottom-color: #d84a2b !important;
+}
+.PyramidFace-right {
+    transform-origin: 100px 0;
+    transform: rotateY(270deg) rotateX(-30deg);
+    border-bottom-color: #ed3e18 !important;
+}

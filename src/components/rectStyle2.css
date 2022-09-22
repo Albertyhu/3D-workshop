@@ -1,0 +1,44 @@
+.BoxFace-front {
+    background-color: #f8722f;
+    transform: rotateY(0deg) translateZ(250px); 
+}
+.BoxFace-back {
+    background-color: #e16527;
+    transform: rotateY(180deg) translateZ(250px);
+}
+.BoxFace-top {
+    background-color: #e47b46; 
+    transform: rotateX(90deg) translateZ(300px); 
+}
+.BoxFace-bottom {
+    background-color: #a95f3a; 
+    transform: rotateX(-90deg) translateZ(300px); 
+}
+.BoxFace-left {
+    background-color: #d88d68; 
+    transform: rotateY(-90deg) translateZ(200px); 
+}
+.BoxFace-right {
+    background-color: #f09f78; 
+    transform: rotateY(90deg) translateZ(200px); 
+}
+
+
+.box2.show-front {
+    transform: translateZ(-250px) rotateY(0deg);
+}
+.box2.show-back {
+    transform: translateZ(-250px) rotateY(-180deg); 
+}
+.box2.show-top {
+    transform: translateZ(-300px) rotateX(-90deg);
+}
+.box2.show-bottom {
+    transform: translateZ(-300px) rotateX(90deg);
+}
+.box2.show-left {
+    transform: translateZ(-200px) rotateY(90deg);
+}
+.box2.show-right {
+    transform: translateZ(-200px) rotateY(-90deg);
+}

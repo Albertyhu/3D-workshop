@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\components",
+    "\\src\\components\\old_pyramid",
+    "\\src\\components\\renderCube",
+    "\\src\\components\\scrollAnimationSample",
+    "\\src\\components\\ScrollSnapCSS",
+    "\\src\\components\\sphere",
+    "\\src\\components\\spinning_cube",
+    "\\src\\components\\textElement"
+  ],
+  "SelectedNode": "\\src\\components\\ScrollSnapCSS\\ScrollSnappingPage_2.js",
+  "PreviewInSolutionExplorer": false
+}

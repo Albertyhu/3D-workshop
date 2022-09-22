@@ -1,0 +1,68 @@
+.spinningcube_face-bottom {
+    transform: rotateX(-90deg) translateZ(100px);
+    background-color: #94a2ff;
+}
+
+.spinningcube_face-top {
+    transform: rotateX(90deg) translateZ(100px);
+    background-color: #808cda;
+}
+
+.spinningcube_face-front {
+    transform: rotateY(0deg) translateZ(100px);
+    background-color: #6972af;
+}
+
+.spinningcube_face-back {
+    transform: rotateY(180deg) translateZ(100px);
+    background-color: #61699c;
+}
+
+.spinningcube_face-right {
+    transform: rotateY(90deg) translateZ(100px);
+    background-color: #525985;
+}
+
+.spinningcube_face-left {
+    transform: rotateY(-90deg) translateZ(100px);
+    background-color: #40466a;
+}
+
+.spinningcube {
+    /* animation: spin 20s linear infinite; */
+}
+
+@keyframes spin {
+    from {
+        transform: translateZ(-5em) rotateY(0deg);
+    }
+
+    to {
+        transform: translateZ(-5em) rotateY(360deg);
+    }
+}
+
+
+.cube.show-front, .automatedCube.show-front {
+    transform: translateZ(-100px) rotateY( 0deg);
+}
+
+.cube.show-right, .automatedCube.show-right {
+    transform: translateZ(-100px) rotateY( -90deg);
+}
+
+.cube.show-back, .automatedCube.show-back {
+    transform: translateZ(-100px) rotateY(-180deg);
+}
+
+.cube.show-left, .automatedCube.show-left {
+    transform: translateZ(-100px) rotateY( 90deg);
+}
+
+.cube.show-top, .automatedCube.show-top {
+    transform: translateZ(-100px) rotateX( -90deg);
+}
+
+.cube.show-bottom, .automatedCube.show-bottom {
+    transform: translateZ(-100px) rotateX( 90deg);
+}
