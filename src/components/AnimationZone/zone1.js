@@ -41,7 +41,27 @@ const RenderZone = props => {
                 RotateY={Cube3YRotate}
                 RotateZ={'0deg'}
             /> 
+
+            <RenderZoneCube
+                animationType={inView ? Cube4Animation : Cube4AnimationReverse}
+                TranslateX={Cube4XCoor}
+                TranslateY={Cube4YCoor}
+                TranslateZ={Cube4ZCoor}
+                RotateX={Cube4XRotate}
+                RotateY={Cube4YRotate}
+                RotateZ={'0deg'}
+            /> 
+            <RenderZoneCube
+                animationType={inView ? Cube5Animation : Cube5AnimationReverse}
+                TranslateX={Cube5XCoor}
+                TranslateY={Cube5YCoor}
+                TranslateZ={Cube5ZCoor}
+                RotateX={Cube5XRotate}
+                RotateY={Cube5YRotate}
+                RotateZ={Cube5ZRotate}
+            /> 
         </Scene> 
+
         )
 }
 
@@ -258,6 +278,151 @@ const Cube3AnimationReverse = keyframes`
             rotateY(${Cube3YRotate}) 
             rotateX(${Cube3XRotate}) 
             rotateZ(-2520deg);
+}
+`
+
+
+const Cube4XCoor = '800px';
+const Cube4YCoor = '-400px';
+const Cube4ZCoor = '-200px';
+const Cube4YRotate = '20deg';
+const Cube4ZRotate = '45deg';
+const Cube4XRotate = '45deg';
+const Cube4Scale = '0.2, 0.2, 0.2';
+const Cube4Animation = keyframes`
+    0%{
+        transform:
+            translateX(${Cube4XCoor})
+            translateY(${Cube4YCoor})
+            translateZ(${Cube4ZCoor})
+            rotateY(${Cube4YRotate}) 
+            rotateX(0deg) 
+            rotateZ(0deg) 
+            scale3d(${Cube4Scale});
+}
+    50%{
+        transform: 
+            translateX(${Cube4XCoor})
+            translateY(${Cube4YCoor})
+            translateZ(${Cube4ZCoor})
+            rotateY(${Cube4YRotate}) 
+            rotateX(360deg)) 
+            rotateZ(360deg)
+            scale3d(${Cube4Scale}); 
+}
+    100%{
+        transform: 
+            translateX(${Cube4XCoor})
+            translateY(${Cube4YCoor})
+            translateZ(${Cube4ZCoor})
+            rotateY(${Cube4YRotate}) 
+            rotateX(720deg) 
+            rotateZ(720deg)
+            scale3d(${Cube4Scale});
+}
+`
+const Cube4AnimationReverse = keyframes`
+    0%{
+        transform:
+            translateX(${Cube4XCoor})
+            translateY(${Cube4YCoor})
+            translateZ(${Cube4ZCoor})
+            rotateY(${Cube4YRotate}) 
+            rotateX(0deg) 
+            rotateZ(0deg)
+            scale3d(${Cube4Scale}); 
+}
+    50%{
+        transform: 
+            translateX(${Cube4XCoor})
+            translateY(${Cube4YCoor})
+            translateZ(${Cube4ZCoor})
+            rotateY(${Cube4YRotate}) 
+            rotateX(-360deg)) 
+            rotateZ(-360deg)
+            scale3d(${Cube4Scale}); 
+}
+    100%{
+        transform: 
+            translateX(${Cube4XCoor})
+            translateY(${Cube4YCoor})
+            translateZ(${Cube4ZCoor})
+            rotateY(${Cube4YRotate}) 
+            rotateX(-720deg) 
+            rotateZ(-720deg)
+            scale3d(${Cube4Scale});
+}
+`
+
+const Cube5XCoor = '-600px';
+const Cube5YCoor = '-500px';
+const Cube5ZCoor = '10px';
+const Cube5YRotate = '20deg';
+const Cube5ZRotate = '55deg';
+const Cube5XRotate = '95deg';
+const Cube5Scale = '0.2, 0.2, 0.2';
+const Cube5Animation = keyframes`
+    0%{
+        transform:
+            translateX(${Cube5XCoor})
+            translateY(${Cube5YCoor})
+            translateZ(${Cube5ZCoor})
+            rotateY(0deg) 
+            rotateX(0deg) 
+            rotateZ(${Cube5ZRotate })
+            scale3d(0 , 0, 0);
+}
+    50%{
+        transform: 
+            translateX(${Cube5XCoor})
+            translateY(${Cube5YCoor})
+            translateZ(${Cube5ZCoor})
+            rotateY(900deg) 
+            rotateX(360deg)) 
+            rotateZ(${Cube5ZRotate })
+            scale3d(0.1, 0.1, 0.1); 
+}
+    100%{
+        transform: 
+            translateX(${Cube5XCoor})
+            translateY(${Cube5YCoor})
+            translateZ(${Cube5ZCoor})
+            rotateY(1800deg) 
+            rotateX(720deg) 
+            rotateZ(${Cube5ZRotate })
+            scale3d(0.2, 0.2, 0.2);
+}
+`
+const Cube5AnimationReverse = keyframes`
+    0%{
+        transform:
+            translateX(${Cube5XCoor})
+            translateY(${Cube5YCoor})
+            translateZ(${Cube5ZCoor})
+            rotateY(0deg) 
+            rotateX(0deg) 
+            rotateZ(${Cube5ZRotate})
+            scale3d(0.2, 0.2, 0.2);
+}
+    50%{
+        transform: 
+            translateX(${Cube5XCoor})
+            translateY(${Cube5YCoor})
+            translateZ(${Cube5ZCoor})
+            rotateY(-900deg) 
+            rotateX(-360deg)) 
+            rotateZ(${Cube5ZRotate})
+            scale3d(0.1, 0.1, 0.1); 
+}
+    100%{
+        transform: 
+            translateX(${Cube5XCoor})
+            translateY(${Cube5YCoor})
+            translateZ(${Cube5ZCoor})
+            rotateY(-1800deg) 
+            rotateX(-720deg) 
+            rotateZ(${Cube5ZRotate})
+            scale3d(0, 0, 0);
 }
 `
 

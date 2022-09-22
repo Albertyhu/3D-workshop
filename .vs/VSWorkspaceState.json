@@ -3,14 +3,14 @@
     "",
     "\\src",
     "\\src\\components",
-    "\\src\\components\\old_pyramid",
+    "\\src\\components\\3dField",
+    "\\src\\components\\AnimationZone",
+    "\\src\\components\\pyramid",
     "\\src\\components\\renderCube",
     "\\src\\components\\scrollAnimationSample",
-    "\\src\\components\\ScrollSnapCSS",
-    "\\src\\components\\sphere",
-    "\\src\\components\\spinning_cube",
+    "\\src\\components\\ScrollSnapDemo",
     "\\src\\components\\textElement"
   ],
-  "SelectedNode": "\\src\\components\\ScrollSnapCSS\\ScrollSnappingPage_2.js",
+  "SelectedNode": "\\README.md",
   "PreviewInSolutionExplorer": false
 }
