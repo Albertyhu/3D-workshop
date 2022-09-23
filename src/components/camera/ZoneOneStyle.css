@@ -1,0 +1,55 @@
+:root {
+    --ZoneOneTranslateX: -1000px;
+    --ZoneOneTranslateY: -1000px;
+    --ZoneOneTranslateZ: -300px;
+    --Duration: 2s; 
+}
+
+.ZoneOne {
+    height: 100%;
+    width: 100%;
+    transform-style: preserve-3d;
+    animation-fill-mode: forwards;
+}
+
+.ZoneOneInScreen {
+    animation-duration: var(--Duration);
+    animation-name: SlideIn;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+.ZoneOneOffScreen {
+    animation-duration: var(--Duration);
+    animation-name: SlideOut;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes SlideIn {
+    0% {
+        transform: translateZ(var(--ZoneOneTranslateZ)) translateX(var(--ZoneOneTranslateX)) translateY(var(--ZoneOneTranslateY));
+    }
+    50% {
+        transform: translateZ(var(--ZoneOneTranslateZ)) translateX(0px) translateY(0px);
+    }
+
+    100% {
+        transform: translateZ(0px) translateX(0px) translateY(0px);
+    }
+}
+
+@keyframes SlideOut {
+    0% {
+        transform: translateZ(0px) translateX(0px) translateY(0px);
+    }
+
+    50% {
+        transform: translateZ(var(--ZoneOneTranslateZ)) translateX(0px) translateY(0px);
+    }
+
+    100% {
+
+        transform: translateZ(var(--ZoneOneTranslateZ)) translateX(var(--ZoneOneTranslateX)) translateY(var(--ZoneOneTranslateY));
+    }
+}

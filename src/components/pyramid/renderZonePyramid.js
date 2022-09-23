@@ -4,6 +4,7 @@ import './pyramidStyle.css';
 
 const RenderPyramid = props => {
     const {
+        identifier, 
         animationType,
         TranslateX,
         TranslateY,
@@ -32,7 +33,7 @@ const RenderPyramid = props => {
                 Duration={duration}
             >
                 <PyramidBase className="Pyramid_base"></PyramidBase>
-                <PyramidFace className="PyramidFace PyramidFace-back"></PyramidFace>
+                <PyramidFace className="PyramidFace PyramidFace-back"><span>{identifier}</span></PyramidFace>
                 <PyramidFace className="PyramidFace PyramidFace-front"></PyramidFace>
                 <PyramidFace className="PyramidFace PyramidFace-left"></PyramidFace>
                 <PyramidFace className="PyramidFace PyramidFace-right"></PyramidFace>
@@ -49,7 +50,7 @@ const Scene = styled.div`
     height: 200px; 
     perspective: 1000px;
     margin: auto;
-
+    position: absolute;
 `
 
 const Pyramid = styled.div`
@@ -75,6 +76,12 @@ const PyramidFace = styled.div`
     border: 100px solid transparent;
     border-bottom: 200px solid red;
     border-top: 0px;
+& > span {
+    font-size: 100px; 
+    color: #ffffff;
+    margin: auto;
+    top: 50%;
+}
 }
 `
 

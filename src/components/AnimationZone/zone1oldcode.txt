@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import styled, { keyframes } from 'styled-components'; 
 import RenderZoneCube from '../renderCube/renderZoneCube.js'; 
 import RenderZonePyramid from '../pyramid/renderZonePyramid.js'; 
+
 const RenderZone = props => {
     const { inView } = props; 
 
@@ -11,8 +12,8 @@ const RenderZone = props => {
 
     return (
         <Scene>
+
             <RenderZoneCube
-                identifier="1"
                 animationType={inView ? Cube1Animation : Cube1AnimationReverse}
                 TranslateX={Cube1XCoor}
                 TranslateY={Cube1YCoor}
@@ -22,7 +23,6 @@ const RenderZone = props => {
                 RotateZ={Cube1ZRotate} 
             /> 
             <RenderZoneCube
-                identifier="2"
                 animationType={inView ? Cube2Animation : Cube2AnimationReverse}
                 TranslateX={Cube2XCoor}
                 TranslateY={Cube2YCoor}
@@ -34,7 +34,6 @@ const RenderZone = props => {
                 duration='1s'
             />
             <RenderZoneCube
-                identifier="3"
                 animationType={inView ? Cube3Animation : Cube3AnimationReverse}
                 TranslateX={Cube3XCoor}
                 TranslateY={Cube3YCoor}
@@ -45,7 +44,6 @@ const RenderZone = props => {
             /> 
 
             <RenderZoneCube
-                identifier="4"
                 animationType={inView ? Cube4Animation : Cube4AnimationReverse}
                 TranslateX={Cube4XCoor}
                 TranslateY={Cube4YCoor}
@@ -55,7 +53,6 @@ const RenderZone = props => {
                 RotateZ={'0deg'}
             /> 
             <RenderZoneCube
-                identifier="5"
                 animationType={inView ? Cube5Animation : Cube5AnimationReverse}
                 TranslateX={Cube5XCoor}
                 TranslateY={Cube5YCoor}
@@ -65,7 +62,6 @@ const RenderZone = props => {
                 RotateZ={Cube5ZRotate}
             /> 
             <RenderZonePyramid
-                identifier="6"
                 animationType={inView ? Pyramid1Animation : Pyramid1AnimationReverse}
                 TranslateX={Pyramid1XCoor}
                 TranslateY={Pyramid1YCoor}
@@ -74,27 +70,8 @@ const RenderZone = props => {
                 RotateY={Pyramid1YRotate}
                 RotateZ={Pyramid1ZRotate}
             />
-            <RenderZonePyramid
-                identifier="7"
-                animationType={inView ? Pyramid2Animation : Pyramid2AnimationReverse}
-                TranslateX={Pyramid2XCoor}
-                TranslateY={Pyramid2YCoor}
-                TranslateZ={Pyramid2ZCoor}
-                RotateX={Pyramid2XRotate}
-                RotateY={Pyramid2YRotate}
-                RotateZ={Pyramid2ZRotate}
-            />
-            <RenderZoneCube
-                identifier="6"
-                animationType={inView ? Cube6Animation : Cube6AnimationReverse}
-                TranslateX={Cube6XCoor}
-                TranslateY={Cube6YCoor}
-                TranslateZ={Cube6ZCoor}
-                RotateX={Cube6XRotate}
-                RotateY={Cube6YRotate}
-                RotateZ={Cube6ZRotate}
-                /> 
         </Scene> 
+
         )
 }
 
@@ -176,7 +153,7 @@ const Cube1AnimationReverse = keyframes`
 
 
 const Cube2XCoor = '400px';
-const Cube2YCoor = '200px'
+const Cube2YCoor = '-90px'
 const Cube2ZCoor = '-800px';
 const Cube2YRotate = '0deg'
 const Cube2ZRotate = '45deg'
@@ -248,8 +225,8 @@ const Cube2AnimationReverse = keyframes`
 `; 
 
 
-const Cube3XCoor = '200px';
-const Cube3YCoor = '-250px';
+const Cube3XCoor = '250px';
+const Cube3YCoor = '-600px';
 const Cube3ZCoor = '100px';
 const Cube3YRotate = '20deg';
 const Cube3ZRotate = '45deg';
@@ -316,7 +293,7 @@ const Cube3AnimationReverse = keyframes`
 
 
 const Cube4XCoor = '800px';
-const Cube4YCoor = '400px';
+const Cube4YCoor = '-400px';
 const Cube4ZCoor = '-200px';
 const Cube4YRotate = '20deg';
 const Cube4ZRotate = '45deg';
@@ -388,10 +365,10 @@ const Cube4AnimationReverse = keyframes`
 `
 
 const Cube5XCoor = '-600px';
-const Cube5YCoor = '300px';
+const Cube5YCoor = '-500px';
 const Cube5ZCoor = '10px';
 const Cube5YRotate = '20deg';
-const Cube5ZRotate = '45deg';
+const Cube5ZRotate = '55deg';
 const Cube5XRotate = '95deg';
 const Cube5Scale = '0.2, 0.2, 0.2';
 const Cube5Animation = keyframes`
@@ -478,7 +455,7 @@ const Pyramid1Animation = keyframes`
             rotateY(0deg) 
             rotateX(${Pyramid1XRotate}) 
             rotateZ(${Pyramid1ZRotate})
-            scale3d(${Pyramid1Scale});
+            scale3d(0 , 0, 0);
 }
     100%{
         transform: 
@@ -511,113 +488,7 @@ const Pyramid1AnimationReverse = keyframes`
             rotateY(-1800deg) 
             rotateX(${Pyramid1XRotate}) 
             rotateZ(${Pyramid1ZRotate})
-            scale3d(${Pyramid1Scale});
+            scale3d(0,0,0);
 }
 `
 
-
-const Pyramid2XCoor = '600px';
-const Pyramid2YCoor = '0px';
-const Pyramid2ZCoor = '10px';
-const Pyramid2YRotate = '0deg';
-const Pyramid2ZRotate = '45deg';
-const Pyramid2XRotate = '0deg';
-const Pyramid2Scale = '0.2, 0.2, 0.2';
-const Pyramid2Animation = keyframes`
-
-    0%{
-        transform:
-            translateX(${Pyramid2XCoor})
-            translateY(${Pyramid2YCoor})
-            translateZ(${Pyramid2ZCoor})
-            rotateY(0deg) 
-            rotateX(${Pyramid2XRotate}) 
-            rotateZ(${Pyramid2ZRotate})
-            scale3d(${Pyramid2Scale});
-}
-    100%{
-        transform: 
-            translateX(${Pyramid2XCoor})
-            translateY(${Pyramid2YCoor})
-            translateZ(${Pyramid2ZCoor})
-            rotateY(2800deg) 
-            rotateX(${Pyramid2XRotate}) 
-            rotateZ(${Pyramid2ZRotate})
-            scale3d(${Pyramid2Scale});
-}
-`
-
-const Pyramid2AnimationReverse = keyframes`
-    0%{
-        transform:
-            translateX(${Pyramid2XCoor})
-            translateY(${Pyramid2YCoor})
-            translateZ(${Pyramid2ZCoor})
-            rotateY(0deg) 
-            rotateX(${Pyramid2XRotate}) 
-            rotateZ(${Pyramid2ZRotate})
-            scale3d(${Pyramid2Scale});
-}
-    100%{
-        transform: 
-            translateX(${Pyramid2XCoor})
-            translateY(${Pyramid2YCoor})
-            translateZ(${Pyramid2ZCoor})
-            rotateY(2800deg) 
-            rotateX(${Pyramid2XRotate}) 
-            rotateZ(${Pyramid2ZRotate})
-            scale3d(${Pyramid2Scale});
-}
-`
-
-const Cube6XCoor = '0px';
-const Cube6YCoor = '500px';
-const Cube6ZCoor = '0px';
-const Cube6YRotate = '20deg';
-const Cube6ZRotate = '46deg';
-const Cube6XRotate = '96deg';
-const Cube6Scale = '0.8, 0.8, 0.8';
-const Cube6Animation = keyframes`
-    0%{
-        transform:
-            translateX(${Cube6XCoor})
-            translateY(${Cube6YCoor})
-            translateZ(${Cube6ZCoor})
-            rotateY(0deg) 
-            rotateX(0deg) 
-            rotateZ(${Cube6ZRotate})
-            scale3d(${Cube6Scale});
-}
-    100%{
-        transform: 
-            translateX(${Cube6XCoor})
-            translateY(${Cube6YCoor})
-            translateZ(${Cube6ZCoor})
-            rotateY(120deg) 
-            rotateX(720deg) 
-            rotateZ(${Cube6ZRotate})
-            scale3d(${Cube6Scale});
-}
-`
-const Cube6AnimationReverse = keyframes`
-    0%{
-        transform:
-            translateX(${Cube6XCoor})
-            translateY(${Cube6YCoor})
-            translateZ(${Cube6ZCoor})
-            rotateY(120deg) 
-            rotateX(0deg) 
-            rotateZ(${Cube6ZRotate})
-            scale3d(${Cube6Scale});
-}
-    100%{
-        transform: 
-            translateX(${Cube6XCoor})
-            translateY(${Cube6YCoor})
-            translateZ(${Cube6ZCoor})
-            rotateY(0deg) 
-            rotateX(-720deg) 
-            rotateZ(${Cube6ZRotate})
-            scale3d(${Cube6Scale});
-}
-`

@@ -4,6 +4,7 @@ import './cubeStyle.css'
 
 const RenderCube = props => {
     const {
+        identifier, 
         animationType,
         TranslateX,
         TranslateY,
@@ -30,12 +31,12 @@ const RenderCube = props => {
                 Scale={Scale}
                 Duration={duration}
             >
-                <Cubeface className="cube_face cube_face-front"></Cubeface>
-                <Cubeface className="cube_face cube_face-back"></Cubeface>
-                <Cubeface className="cube_face cube_face-left"></Cubeface>
-                <Cubeface className="cube_face cube_face-right"></Cubeface>
-                <Cubeface className="cube_face cube_face-top"></Cubeface>
-                <Cubeface className="cube_face cube_face-bottom"></Cubeface>
+                <Cubeface className="cube_face cube_face-front" ><div>{identifier}</div></Cubeface>
+                <Cubeface className="cube_face cube_face-back" ></Cubeface>
+                <Cubeface className="cube_face cube_face-left" ></Cubeface> 
+                <Cubeface className="cube_face cube_face-right" ></Cubeface>
+                <Cubeface className="cube_face cube_face-top" ></Cubeface>
+                <Cubeface className="cube_face cube_face-bottom" ></Cubeface>
             </Cube>
         </Scene>
         )
@@ -48,7 +49,8 @@ width: 200px;
 height: 200px; 
 perspective: 1000px; 
 margin: auto;
-
+/* added */
+position: absolute; 
 `
 const Cube = styled.div`
 width: 100%; 
@@ -71,4 +73,14 @@ const Cubeface = styled.div`
     height: 200px;
    // border: 1px solid #000;
     opacity: 0.5;
+text-align: center; 
+justify-content: center; 
+
+& > div {
+    font-size: 80px; 
+    color: #ffffff;
+    margin: auto;
+    position: relative;
+    top: 25%;
+}
 `

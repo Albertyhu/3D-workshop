@@ -2,6 +2,9 @@ import React, { useRef, useEffect, useState } from 'react'
 import styled from 'styled-components';
 import RenderCube from '../renderCube/cube.js'; 
 import RenderZoneOne from '../AnimationZone/zone1.js'; 
+import RenderZoneTwo from '../AnimationZone/zone2.js'; 
+import RenderZoneThree from '../AnimationZone/zone3.js'; 
+import RenderCameraWork from '../camera/ZoneOneAnimation.js'; 
 
 const RenderScrollSnappingPage = () => {
     const [level, setLevel] = useState('level0'); 
@@ -118,7 +121,13 @@ const RenderScrollSnappingPage = () => {
     return (
         <MainContainer id="container" ref={ContainerRef}>
             <FixedElement id="FixedElement" Position={position}>
-                <RenderZoneOne inView={level == 'level2'? true : false } />
+                {/*<RenderZoneOne
+                    inView={level == 'level1' ? true : false}
+                    level={level}
+                /> */}
+                {/*<RenderZoneTwo inView={level == 'level1' ? true : false} />*/}
+                {/*<RenderZoneThree inView={level == 'level1' ? true : false} />*/}
+                <RenderCameraWork level={level} />
             </FixedElement>
             <Marker />
             <Section id="SectionZero" ref={SectionZeroRef}>

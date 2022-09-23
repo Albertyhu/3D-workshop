@@ -1,1 +1,1 @@
-This a project to experiment with 3d shapes. 
+This is a project that experiments with 3d shapes. 

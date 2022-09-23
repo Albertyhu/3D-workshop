@@ -1,3 +1,10 @@
+notes 9/22/22
+I tried to animate the parent div that contains the zone with animated 3d objects to simulate
+the panning of a camera. However, the app didn't like that  I was using styled-components.
+Thus, I was forced to write the parent div the traditional way using an external style sheet 
+to code the CSS animations. 
+
+
 notes 9/20/22
 The page that contains the cube that animates on scroll is located at
 ./src/ScrollSnapCSS/ScrollSnappingPage_2.js
@@ -19,15 +26,21 @@ where the scroll is happening. In the case of this project, the scrolling
 is not the default option where it is done on the body element.
 Instead, it is done on the 'MainContainer' div. 
 
-
+9/22/22
+Write code for camera work on the zone files.
 
 note 9/15/22
 read this about triggering a css animation with scroll
 https://coolcssanimation.com/how-to-trigger-a-css-animation-on-scroll/
 
 Lessons learned: 
-The scroll snap type property does not work in react. 
+1.) The scroll snap type property does not work in react. 
 I have to install a dependency scroll-snap to create the snapping feature.
+
+2.) When writing the block of code for transform, the order in which the properties are placed do matter
+
+
+3.) Perspective needs to be really high so the objects do not look as if they are distorted 
 
 update: 
 I did manage to get the CSS scroll-snap-type property to work

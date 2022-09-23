@@ -3,14 +3,14 @@
     "",
     "\\src",
     "\\src\\components",
-    "\\src\\components\\3dField",
-    "\\src\\components\\AnimationZone",
+    "\\src\\components\\camera",
+    "\\src\\components\\old_pyramid",
     "\\src\\components\\pyramid",
     "\\src\\components\\renderCube",
     "\\src\\components\\scrollAnimationSample",
     "\\src\\components\\ScrollSnapDemo",
     "\\src\\components\\textElement"
   ],
-  "SelectedNode": "\\README.md",
+  "SelectedNode": "\\src\\notes.txt",
   "PreviewInSolutionExplorer": false
 }
