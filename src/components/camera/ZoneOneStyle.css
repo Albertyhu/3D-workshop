@@ -1,37 +1,94 @@
 :root {
-    --ZoneOneTranslateX: -1000px;
-    --ZoneOneTranslateY: -1000px;
-    --ZoneOneTranslateZ: -300px;
+    --ZoneOneTranslateX: -1200px;
+    --ZoneOneTranslateY: -1200px;
+    --ZoneOneTranslateZ: -1200px;
     --Duration: 2s; 
+    --PanBack: -150px; 
+    --PanTowards: 150px; 
 }
 
 .ZoneOne {
     height: 100%;
     width: 100%;
     transform-style: preserve-3d;
-    animation-fill-mode: forwards;
+   /* animation-fill-mode: forwards;*/
+    position: relative;
 }
 
-.ZoneOneInScreen {
+.Level1Text {
+    transform-style: preserve-3d;
+    animation-name: TextAnimation;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-duration: 2s;
+}
+
+@keyframes TextAnimation {
+    0% {
+        transform: translateZ(0px);
+    }
+
+    100% {
+        transform: translateZ(100px);
+    }
+}
+
+.paused {
+    animation-play-state: paused; 
+}
+
+/*.ZoneOneInScreen {
     animation-duration: var(--Duration);
     animation-name: SlideIn;
     animation-timing-function: linear;
     animation-fill-mode: forwards;
+}*/
+.ZoneOneInScreen {
+    transform: translateZ(0px) translateX(0px) translateY(0px);
+    transition: transform 2s; 
 }
 
-.ZoneOneOffScreen {
+.ZoneOneInScreen_noAnimation {
+    transform: translateZ(0px) translateX(0px) translateY(0px);
+    transition: transform 2s;
+}
+
+/*.ZoneOneOffScreen {
     animation-duration: var(--Duration);
     animation-name: SlideOut;
     animation-timing-function: linear;
     animation-fill-mode: forwards;
+}*/
+
+.ZoneOneOffScreen {
+    transform: translateZ(var(--ZoneOneTranslateZ)) translateX(var(--ZoneOneTranslateX)) translateY(var(--ZoneOneTranslateY));
+    transition: transform 2s;
+}
+
+/*.ZoneOnePanBack {
+    animation-duration: var(--Duration);
+    animation-name: PanBack;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-delay: 2s; 
+}*/
+
+.textPanBack {
+    transform: translateZ(var(--PanBack)) translateX(0px) translateY(0px);
+    transition: transform 4s; 
+}
+
+.ZoneOnePanTowards {
+    transform: translateZ(var(--PanTowards)) translateX(0px) translateY(0px);
+    transition: transform 4s !important;
 }
 
 @keyframes SlideIn {
     0% {
-        transform: translateZ(var(--ZoneOneTranslateZ)) translateX(var(--ZoneOneTranslateX)) translateY(var(--ZoneOneTranslateY));
+        transform: /*translateZ(var(--ZoneOneTranslateZ))*/ translateZ(0px) translateX(var(--ZoneOneTranslateX)) translateY(var(--ZoneOneTranslateY));
     }
-    50% {
-        transform: translateZ(var(--ZoneOneTranslateZ)) translateX(0px) translateY(0px);
+    80% {
+        transform: /*translateZ(var(--ZoneOneTranslateZ))*/ translateZ(0px) translateX(0px) translateY(0px);
     }
 
     100% {
@@ -43,13 +100,22 @@
     0% {
         transform: translateZ(0px) translateX(0px) translateY(0px);
     }
-
-    50% {
-        transform: translateZ(var(--ZoneOneTranslateZ)) translateX(0px) translateY(0px);
+    25% {
+        transform: translateZ(0px) translateX(0px) translateY(0px);
     }
+
 
     100% {
 
         transform: translateZ(var(--ZoneOneTranslateZ)) translateX(var(--ZoneOneTranslateX)) translateY(var(--ZoneOneTranslateY));
+    }
+}
+
+@keyframes PanBack {
+    0% {
+        transform: translateZ(var(--PanBack)) translateX(0px) translateY(0px);
+    }
+    100% {
+        transform: translateZ(0px) translateX(0px) translateY(0px);
     }
 }

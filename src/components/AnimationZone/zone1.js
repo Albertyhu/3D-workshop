@@ -3,7 +3,7 @@ import styled, { keyframes } from 'styled-components';
 import RenderZoneCube from '../renderCube/renderZoneCube.js'; 
 import RenderZonePyramid from '../pyramid/renderZonePyramid.js'; 
 const RenderZone = props => {
-    const { inView } = props; 
+    const { inView, animationDelay = '0s' } = props; 
 
     useEffect(() => {
         console.log('inView: ' + inView)
@@ -19,7 +19,8 @@ const RenderZone = props => {
                 TranslateZ={Cube1ZCoor}
                 RotateX={'0deg'}
                 RotateY={Cube1YRotate}
-                RotateZ={Cube1ZRotate} 
+                RotateZ={Cube1ZRotate}
+                duration='2s'
             /> 
             <RenderZoneCube
                 identifier="2"
@@ -31,7 +32,8 @@ const RenderZone = props => {
                 RotateY={Cube2YRotate}
                 RotateZ={Cube2ZRotate}
                 Scale='1, 1, 1'
-                duration='1s'
+                duration='2s'
+                
             />
             <RenderZoneCube
                 identifier="3"
@@ -42,6 +44,8 @@ const RenderZone = props => {
                 RotateX={Cube3XRotate}
                 RotateY={Cube3YRotate}
                 RotateZ={'0deg'}
+                duration='2s'
+                
             /> 
 
             <RenderZoneCube
@@ -53,6 +57,8 @@ const RenderZone = props => {
                 RotateX={Cube4XRotate}
                 RotateY={Cube4YRotate}
                 RotateZ={'0deg'}
+                duration='2s'
+                
             /> 
             <RenderZoneCube
                 identifier="5"
@@ -63,6 +69,8 @@ const RenderZone = props => {
                 RotateX={Cube5XRotate}
                 RotateY={Cube5YRotate}
                 RotateZ={Cube5ZRotate}
+                duration='2s'
+                
             /> 
             <RenderZonePyramid
                 identifier="6"
@@ -73,6 +81,8 @@ const RenderZone = props => {
                 RotateX={Pyramid1XRotate}
                 RotateY={Pyramid1YRotate}
                 RotateZ={Pyramid1ZRotate}
+                duration='2s'
+                
             />
             <RenderZonePyramid
                 identifier="7"
@@ -83,6 +93,8 @@ const RenderZone = props => {
                 RotateX={Pyramid2XRotate}
                 RotateY={Pyramid2YRotate}
                 RotateZ={Pyramid2ZRotate}
+                duration='2s'
+                
             />
             <RenderZoneCube
                 identifier="6"
@@ -93,6 +105,8 @@ const RenderZone = props => {
                 RotateX={Cube6XRotate}
                 RotateY={Cube6YRotate}
                 RotateZ={Cube6ZRotate}
+                duration='2s'
+                
                 /> 
         </Scene> 
         )

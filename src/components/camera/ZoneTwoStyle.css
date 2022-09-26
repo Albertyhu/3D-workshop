@@ -1,0 +1,73 @@
+:root {
+    --ZoneTwoTranslateX: 1200px;
+    --ZoneTwoTranslateY: 1200px;
+    --ZoneTwoToTop: -1200px; 
+    --ZoneTwoTranslateZ: -500px;
+    --Duration: 2s; 
+}
+
+.ZoneTwo {
+    height: 100%;
+    width: 100%;
+    transform-style: preserve-3d;
+    animation-fill-mode: forwards;
+    position: relative; 
+}
+
+/*.ZoneTwoSlideFromBottomRight {
+    animation-duration: var(--Duration);
+    animation-name: SlideInFromBottomRight ;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+.ZoneTwoSlideToBottomRight{
+    animation-duration: var(--Duration);
+    animation-name: SlideOutToBottomRight;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+*/
+.ZoneTwoSlideFromBottomRight {
+    transform: translateZ(0px) translateX(0px) translateY(0px);
+    transition: transform 2s; 
+}
+
+.ZoneTwoSlideToBottomRight {
+    transform: translateZ(var(--ZoneTwoTranslateZ)) translateX(var(--ZoneTwoTranslateX)) translateY(var(--ZoneTwoTranslateY));
+    transition: transform 2s; 
+}
+
+.ZoneTwoSlideToTopRight {
+    transform: translateZ(var(--ZoneTwoTranslateZ)) translateX(var(--ZoneTwoTranslateX)) translateY(var(--ZoneTwoToTop));
+    transition: transform 2s;
+}
+
+    @keyframes SlideInFromBottomRight {
+        0% {
+            transform: translateZ(var(--ZoneTwoTranslateZ)) translateX(var(--ZoneTwoTranslateX)) translateY(var(--ZoneTwoTranslateY));
+        }
+
+        25% {
+            transform: translateZ(var(--ZoneTwoTranslateZ)) translateX(var(--ZoneTwoTranslateX)) translateY(var(--ZoneTwoTranslateY));
+        }
+
+
+        100% {
+            transform: translateZ(0px) translateX(0px) translateY(0px);
+        }
+    }
+
+    @keyframes SlideOutToBottomRight {
+        0% {
+            transform: translateZ(0px) translateX(0px) translateY(0px);
+        }
+
+        50% {
+            transform: translateZ(var(--ZoneTwoTranslateZ)) translateX(0px) translateY(0px);
+        }
+
+        100% {
+            transform: translateZ(var(--ZoneTwoTranslateZ)) translateX(var(--ZoneTwoTranslateX)) translateY(var(--ZoneTwoTranslateY));
+        }
+    }

@@ -15,7 +15,6 @@ const RenderCube = props => {
         Scale = "1, 1, 1", 
         duration = '2s', 
     } = props; 
-
     return (
         <Scene id = "Scene">
             <Cube
@@ -57,13 +56,13 @@ width: 100%;
 height: 100%; 
 position: relative;
 transform-style: preserve-3d;
-/*transform: ${props => {
+transform: ${props => {
         return "translateX(" + props.TranslateX + ") translateY("
             + props.TranslateY + ") translateZ(" + props.TranslateZ + ") rotateX("
             + props.RotateX + ") rotateY(" + props.RotateY + ") rotateZ(" + props.RotateZ
             + ") scale3d(" + props.Scale + ")"
-    }};*/
-animation: ${props => props.animationType} ${props => props.Duration} linear;
+    }};
+animation: ${props => props.animationType} ${props =>props.Duration} linear;
 animation-fill-mode: forwards;
 `
 

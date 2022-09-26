@@ -1,3 +1,13 @@
+notes 9/24/22
+Usig
+
+notes 9/23/22
+intersection observer is causing a lot of bugs. 
+I might have to use scroll events instead.
+
+notes 9/23/22
+font-family: 'Montserrat', sans-serif;
+
 notes 9/22/22
 I tried to animate the parent div that contains the zone with animated 3d objects to simulate
 the panning of a camera. However, the app didn't like that  I was using styled-components.

@@ -1,0 +1,73 @@
+:root {
+    --ZoneThreeTranslateX: -1200px;
+    --ZoneThreeTranslateY: 1200px;
+    --ZoneThreeToTop: -1200px; 
+    --ZoneThreeTranslateZ: -500px;
+    --Duration: 2s; 
+}
+
+.ZoneThree {
+    height: 100%;
+    width: 100%;
+    transform-style: preserve-3d;
+    animation-fill-mode: forwards;
+    position: relative; 
+}
+
+/*.ZoneThreeSlideFromBottomRight {
+    animation-duration: var(--Duration);
+    animation-name: SlideInFromBottomRight ;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+.ZoneThreeSlideToBottomRight{
+    animation-duration: var(--Duration);
+    animation-name: SlideOutToBottomRight;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+*/
+.ZoneThreeSlideFromBottomRight {
+    transform: translateZ(0px) translateX(0px) translateY(0px);
+    transition: transform 2s; 
+}
+
+.ZoneThreeSlideToBottomRight {
+    transform: translateZ(var(--ZoneThreeTranslateZ)) translateX(var(--ZoneThreeTranslateX)) translateY(var(--ZoneThreeTranslateY));
+    transition: transform 2s; 
+}
+
+.ZoneThreeSlideToTopRight {
+    transform: translateZ(var(--ZoneThreeTranslateZ)) translateX(var(--ZoneThreeTranslateX)) translateY(var(--ZoneThreeToTop));
+    transition: transform 2s;
+}
+
+    @keyframes SlideInFromBottomRight {
+        0% {
+            transform: translateZ(var(--ZoneThreeTranslateZ)) translateX(var(--ZoneThreeTranslateX)) translateY(var(--ZoneThreeTranslateY));
+        }
+
+        25% {
+            transform: translateZ(var(--ZoneThreeTranslateZ)) translateX(var(--ZoneThreeTranslateX)) translateY(var(--ZoneThreeTranslateY));
+        }
+
+
+        100% {
+            transform: translateZ(0px) translateX(0px) translateY(0px);
+        }
+    }
+
+    @keyframes SlideOutToBottomRight {
+        0% {
+            transform: translateZ(0px) translateX(0px) translateY(0px);
+        }
+
+        50% {
+            transform: translateZ(var(--ZoneThreeTranslateZ)) translateX(0px) translateY(0px);
+        }
+
+        100% {
+            transform: translateZ(var(--ZoneThreeTranslateZ)) translateX(var(--ZoneThreeTranslateX)) translateY(var(--ZoneThreeTranslateY));
+        }
+    }

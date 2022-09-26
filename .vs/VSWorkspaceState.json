@@ -4,13 +4,13 @@
     "\\src",
     "\\src\\components",
     "\\src\\components\\camera",
+    "\\src\\components\\global",
     "\\src\\components\\old_pyramid",
-    "\\src\\components\\pyramid",
-    "\\src\\components\\renderCube",
-    "\\src\\components\\scrollAnimationSample",
     "\\src\\components\\ScrollSnapDemo",
+    "\\src\\components\\ScrollSnapDemo\\old",
+    "\\src\\components\\sphere",
     "\\src\\components\\textElement"
   ],
-  "SelectedNode": "\\src\\notes.txt",
+  "SelectedNode": "\\src\\components\\ScrollSnapDemo\\ScrollSnappingPage.js",
   "PreviewInSolutionExplorer": false
 }

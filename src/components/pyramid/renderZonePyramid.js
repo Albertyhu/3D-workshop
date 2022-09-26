@@ -63,7 +63,7 @@ const Pyramid = styled.div`
                 + props.TranslateY + ") translateZ(" + props.TranslateZ + ") rotateX("
                 + props.RotateX + ") rotateY(" + props.RotateY + ") rotateZ(" + props.RotateZ
                 + ") scale3d(" + props.Scale + ")"
-        }}; 
+}}; 
     animation: ${props => props.animationType} ${props => props.Duration} linear;
     animation-fill-mode: forwards;
 `
