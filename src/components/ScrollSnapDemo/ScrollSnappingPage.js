@@ -161,9 +161,9 @@ const RenderScrollSnappingPage = () => {
     }, [position])
     */
     
-    useEffect(() => {
-        console.log("level: " + level)
-    }, [level])
+    //useEffect(() => {
+    //    console.log("level: " + level)
+    //}, [level])
     
 
     useEffect(() => {

@@ -6,11 +6,12 @@ export const Text = styled.div`
     width: 50%; 
     margin: auto; 
     text-align: center; 
-    position: fixed; 
+    position: absolute; 
    // top:${props => (393 - props.TextPosition) + 'px' || '50%'};
     top: 25%; 
     left: 0; 
     right: 0;
+    transform: translateZ(300px) scale(0.75); 
    
 `
 

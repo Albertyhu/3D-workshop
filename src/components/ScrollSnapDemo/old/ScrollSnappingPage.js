@@ -165,6 +165,7 @@ const MainContainer = styled.div`
     overflow-x: hidden; 
     height: 100vh;
     position: relative;
+
 ` 
 const Section = styled.div`
     scroll-snap-align: end; 

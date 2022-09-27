@@ -5,7 +5,7 @@
     "\\src\\components",
     "\\src\\components\\camera",
     "\\src\\components\\global",
-    "\\src\\components\\old_pyramid",
+    "\\src\\components\\renderCube",
     "\\src\\components\\ScrollSnapDemo",
     "\\src\\components\\ScrollSnapDemo\\old",
     "\\src\\components\\sphere",

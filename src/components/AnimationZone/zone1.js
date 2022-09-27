@@ -119,6 +119,7 @@ const Scene = styled.div`
     height: 200px; 
     perspective: 600px; 
     margin: auto; 
+    transform: translateZ(-100px) scale(0.91);
 `
 
 const Cube1XCoor = '-400px';
