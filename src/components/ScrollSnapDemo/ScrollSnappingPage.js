@@ -7,6 +7,7 @@ import RenderZoneThree from '../AnimationZone/zone3.js';
 import RenderZoneOneCamera from '../camera/ZoneOneAnimation.js'; 
 import RenderZoneTwoCamera from '../camera/ZoneTwoAnimation.js'; 
 import RenderZoneThreeCamera from '../camera/ZoneThreeAnimation.js'; 
+import RenderProjectPanel from '../project_panel/projectIndex.js'; 
 
 const RenderScrollSnappingPage = () => {
     const [level, setLevel] = useState('level0'); 
@@ -29,94 +30,22 @@ const RenderScrollSnappingPage = () => {
 
     var rootMarginVal = '800px'
 
-  //  const SectionOne = document.getElementById("SectionOne")
     const thresholdLevel = 0.5; 
 
-    //var SectionZeroObserver = new IntersectionObserver(() => {
-    //    setLevel('level0')
-    //}, {
-    //        threshold: thresholdLevel,
-    //        rootMargin: rootMarginVal, 
-    //})
-    //var SectionOneObserver = new IntersectionObserver(() => {
-    //    setLevel('level1')
-    //}, {
-    //        threshold: thresholdLevel,
-    //        rootMargin: rootMarginVal, 
-    //})
-    //var SectionTwoObserver = new IntersectionObserver(() => {
-    //    setLevel('level2')
-    //}, {
-    //        threshold: thresholdLevel,
-    //        rootMargin: rootMarginVal, 
-    //})
-    //var SectionThreeObserver = new IntersectionObserver(() => {
-    //    setLevel('level3')
-    //}, {
-    //        threshold: thresholdLevel,
-    //        rootMargin: rootMarginVal, 
-    //})
-    //var SectionFourObserver = new IntersectionObserver(() => {
-    //    setLevel('level4')
-    //}, {
-    //        threshold: thresholdLevel,
-    //        rootMargin: rootMarginVal, 
-    //})
     var SectionZero; 
     var SectionOne; 
     var SectionTwo; 
     var SectionThree; 
     var SectionFour; 
 
-    //useEffect(() => {
-    //    if (SectionZeroRef.current) {
-    //        SectionZero = document.querySelector("#SectionZero")
-
-    //        SectionZeroObserver.observe(SectionZero)
-    //    }
-    //}, [SectionZeroRef.current])
-
-    //useEffect(() => {
-    //    if (SectionOneRef.current) {
-    //        SectionOne = document.querySelector("#SectionOne")
-
-    //        SectionOneObserver.observe(SectionOne)
-    //    }
-    //}, [SectionOneRef.current])
-
-    //useEffect(() => {
-    //    if (SectionTwoRef.current) {
-    //        SectionTwo = document.querySelector("#SectionTwo")
-
-    //        SectionTwoObserver.observe(SectionTwo)
-    //    }
-    //}, [SectionTwoRef.current])
-    //useEffect(() => {
-    //    if (SectionThreeRef.current) {
-    //        SectionThree = document.querySelector("#SectionThree")
-    //        SectionThreeObserver.observe(SectionThree)
-    //    }
-    //}, [SectionThreeRef.current])
-    //useEffect(() => {
-    //    if (SectionFourRef.current) {
-    //        SectionFour = document.querySelector("#SectionFour")
-
-    //        SectionFourObserver.observe(SectionFour)
-    //    }
-    //}, [SectionFourRef.current])
-    /*
-    useEffect(() => {
-        console.log('level: ' + level)
-    }, [level])*/
-
     const scrollEvent = event => {
-        FixedMarkerElem = document.querySelector('#HalfPageMarker');
-        var marker_height = FixedMarkerElem.getBoundingClientRect().top; 
-       // console.log('marker height: ' + marker_height)
-        setMarkerHeight(marker_height);
-        SectionOneMarkerElem = document.querySelector('#SectionOneMarker')
-        var SectionOne_markerHeight = SectionOneMarkerElem.offsetTop; 
-        setMarkerOneHeight(SectionOne_markerHeight); 
+       // FixedMarkerElem = document.querySelector('#HalfPageMarker');
+       // var marker_height = FixedMarkerElem.getBoundingClientRect().top; 
+       //// console.log('marker height: ' + marker_height)
+       // setMarkerHeight(marker_height);
+       // SectionOneMarkerElem = document.querySelector('#SectionOneMarker')
+       // var SectionOne_markerHeight = SectionOneMarkerElem.offsetTop; 
+       // setMarkerOneHeight(SectionOne_markerHeight); 
 
         if (MainContElem.scrollTop < 1009) {
             setPosition('absolute');
@@ -161,11 +90,10 @@ const RenderScrollSnappingPage = () => {
     }, [position])
     */
     
-    //useEffect(() => {
-    //    console.log("level: " + level)
-    //}, [level])
+    useEffect(() => {
+        console.log("level: " + level)
+    }, [level])
     
-
     useEffect(() => {
         console.log("MarkerOneHeight: " + MarkerOneHeight)
     }, [MarkerOneHeight])
@@ -176,14 +104,12 @@ const RenderScrollSnappingPage = () => {
 
     return (
         <MainContainer id="container" ref={ContainerRef}>
-            <FixedElement id="FixedElement" Position={position}>
-                {/*<RenderZoneOne
-                    inView={level == 'level1' ? true : false}
-                    level={level}
-                /> */}
-                {/*<RenderZoneTwo inView={level == 'level1' ? true : false} />*/}
-                {/*<RenderZoneThree inView={level == 'level1' ? true : false} />*/}
-                <RenderZoneOneCamera
+            <FixedElement
+                id="FixedElement"
+                Position={position}
+                ZIndex={level == 'level4' ? "20" : "-1"}
+            >
+                 <RenderZoneOneCamera
                     level={level}
                     textPosition={MarkerOneHeight}
                 /> 
@@ -192,15 +118,15 @@ const RenderScrollSnappingPage = () => {
                     textPosition={FixedMarkerHeight} />
                 <RenderZoneThreeCamera
                     level={level}
-                    textPosition={FixedMarkerHeight} />
+                    textPosition={FixedMarkerHeight} /> 
+                <RenderProjectPanel inView={level === 'level4' ? true : false} />
+
             </FixedElement>
-            <HalfPageMarker id='HalfPageMarker' Display ='none'/>
             <Section id="SectionZero" ref={SectionZeroRef}>
                 <Title>Section Zero</Title>
             </Section >
             <Section id="SectionOne" ref={SectionOneRef}>
                 <Title>First Section</Title>
-                <HalfPageMarker id='SectionOneMarker' Display={'block'} />
             </Section >
             <Section id="SectionTwo" ref={SectionTwoRef}>
                 <Title>Second Section</Title>
@@ -235,7 +161,7 @@ const Section = styled.div`
    // height: 120vh;
     resize: none;
     text-align: center; 
-    opacity: 0.0;
+    opacity: 0;
 &#SectionOne{
     background-color: #EFF213; 
 }
@@ -276,7 +202,7 @@ const FixedElement = styled.div`
         }
     }};
     right: 0;
-    z-index: -1;
+    z-index: ${props => props.ZIndex || "-1"};
 `
 
 const HalfPageMarker = styled.div`

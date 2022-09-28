@@ -1,5 +1,16 @@
-notes 9/24/22
-Usig
+notes 9/28/22
+The current way of implementing scroll snap is not working, which is add a layer over the body. That layer contains 
+the scroll snap feature. However, elements on the scroll snap layer has to be under the layer using a lower z-index,
+so that user can scroll through the scroll-snap layer.
+Because of this, users cannot interact with these elements. 
+
+Options I can implement: 
+Sacrifice the functionality of the user's mouse scroll and build buttons that allows the user to navigate 
+through the page.
+
+Attempt to add scroll snap to the body instead 
+
+Don't use scroll snap. 
 
 notes 9/23/22
 intersection observer is causing a lot of bugs. 
